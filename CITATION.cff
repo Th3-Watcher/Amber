@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use Amber in your research, please cite it as below."
+title: "Amber: Immutable Checkpoint Storage for Self-Healing ML Pipelines"
+type: software
+authors:
+  - alias: "Th3-Watcher"
+repository-code: "https://github.com/Th3-Watcher/Amber"
+license: MIT
+keywords:
+  - machine-learning
+  - checkpoints
+  - immutable-storage
+  - anomaly-detection
+  - model-integrity
+  - self-healing
+  - training-pipelines
+  - ml-safety
+  - kernel-immutability
+  - content-addressed-storage

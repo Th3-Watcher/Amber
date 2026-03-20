@@ -1,0 +1,8 @@
+target/
+.amber/
+*.bin
+*.swp
+*.swo
+*~
+.env
+test/

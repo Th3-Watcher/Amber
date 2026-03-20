@@ -1,0 +1,87 @@
+[workspace]
+members = [
+    "amber-core",
+    "amber-daemon",
+    "amber-cli",
+]
+resolver = "2"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Th3-Watcher"]
+license = "MIT"
+repository = "https://github.com/Th3-Watcher/amber"
+description = "Immutable checkpoint storage for ML training pipelines — kernel-level protection against silent model corruption"
+keywords = ["machine-learning", "checkpoints", "immutable", "versioning", "model-safety"]
+categories = ["command-line-utilities", "filesystem"]
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# File system watching
+notify = "6"
+
+# Hashing
+sha2 = "0.10"
+
+# Delta compression
+bsdiff = "0.2"
+
+# Compression
+zstd = "0.13"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+bincode = "1"
+
+# CLI
+clap = { version = "4", features = ["derive"] }
+
+# TUI
+ratatui = "0.26"
+crossterm = "0.27"
+
+# Password hashing
+argon2 = "0.5"
+rand_core = { version = "0.6", features = ["getrandom"] }
+
+# Timestamps
+chrono = { version = "0.4", features = ["serde"] }
+
+# Unique IDs
+uuid = { version = "1", features = ["v4", "serde"] }
+
+# Daemonize
+daemonize = "0.5"
+
+# Linux syscalls
+nix = { version = "0.27", features = ["fs", "ioctl"] }
+
+# Error handling
+anyhow = "1"
+thiserror = "1"
+
+# Text diff
+diff = "0.1"
+
+# Linux syscalls
+libc = "0.2"
+
+# Secure passphrase input
+rpassword = "7"
+
+# Directory helpers
+dirs = "5"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }

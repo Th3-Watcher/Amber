@@ -1,0 +1,25 @@
+[package]
+name = "amber-cli"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "amber"
+path = "src/main.rs"
+
+[dependencies]
+amber-core = { path = "../amber-core" }
+tokio = { workspace = true }
+clap = { workspace = true }
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+serde = { workspace = true }
+bincode = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+diff = { workspace = true }
+rpassword = { workspace = true }

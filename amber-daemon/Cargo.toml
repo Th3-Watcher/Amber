@@ -1,0 +1,22 @@
+[package]
+name = "amber-daemon"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "amberd"
+path = "src/main.rs"
+
+[dependencies]
+amber-core = { path = "../amber-core" }
+tokio = { workspace = true }
+notify = { workspace = true }
+serde = { workspace = true }
+bincode = { workspace = true }
+chrono = { workspace = true }
+uuid = { workspace = true }
+daemonize = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- V16: Stencil/stamp — bold flat single-weight, high contrast, icon-ready -->
+  <rect width="512" height="512" fill="#0d1117"/>
+  <g fill="#FFB300">
+    <!-- Drop -->
+    <path d="M256,40 C256,40 125,175 90,290 C55,405 118,475 215,492 C240,496 272,496 297,492 C394,475 457,405 422,290 C387,175 256,40 256,40Z"/>
+  </g>
+  <!-- Bug cutout — negative space -->
+  <g transform="translate(256,295)" fill="#0d1117">
+    <ellipse cx="0" cy="24" rx="24" ry="34" />
+    <ellipse cx="0" cy="-8" rx="19" ry="17"/>
+    <circle cx="0" cy="-30" r="14"/>
+    <!-- Antennae -->
+    <path d="M-7,-42 Q-22,-66 -32,-76" fill="none" stroke="#0d1117" stroke-width="5" stroke-linecap="round"/>
+    <path d="M7,-42 Q22,-66 32,-76" fill="none" stroke="#0d1117" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="-32" cy="-76" r="5"/>
+    <circle cx="32" cy="-76" r="5"/>
+    <!-- Wings -->
+    <ellipse cx="-32" cy="2" rx="26" ry="40" opacity="0.6" transform="rotate(-12,-32,2)"/>
+    <ellipse cx="32" cy="2" rx="26" ry="40" opacity="0.6" transform="rotate(12,32,2)"/>
+    <!-- Legs -->
+    <g stroke="#0d1117" stroke-width="4" fill="none" stroke-linecap="round">
+      <path d="M-14,-14 L-40,-26"/><path d="M14,-14 L40,-26"/>
+      <path d="M-17,4 L-48,10"/><path d="M17,4 L48,10"/>
+      <path d="M-14,24 L-38,42"/><path d="M14,24 L38,42"/>
+    </g>
+  </g>
+  <!-- Eyes — amber dots inside dark head -->
+  <circle cx="249" cy="263" r="4" fill="#FFB300"/>
+  <circle cx="263" cy="263" r="4" fill="#FFB300"/>
+</svg>

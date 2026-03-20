@@ -1,0 +1,11 @@
+[Unit]
+Description=Amber — local per-write file versioning daemon
+After=default.target
+
+[Service]
+ExecStart=%h/.local/bin/amberd
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

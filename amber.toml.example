@@ -1,0 +1,45 @@
+[storage]
+full_copy_threshold_mb = 50
+store_path = "~/.amber/store"
+max_versions = 0                            # 0 = unlimited
+
+[session]
+gap_seconds = 300                           # 5 min inactivity = new session
+
+[lock]
+passphrase_hash = ""                        # Set by `amber init`
+
+[smart_engine]
+write_storm_threshold = 5                   # writes/sec to trigger training mode
+training_mode_min_interval_seconds = 30     # min gap between snapshots in training
+anomaly_shrink_ratio = 0.5                  # flag if file shrinks below 50%
+
+[watch]
+ignore = ["*.tmp", "*.swp", "__pycache__/**", ".git/**", ".amber/**"]
+
+[hooks]
+pre_snapshot = []                           # Run before storing (block on failure)
+post_snapshot = [                           # Run after storing ($AMBER_VERSION, $AMBER_HASH, $AMBER_FILE)
+    # "python3 /path/to/benchmark.py --checkpoint $AMBER_FILE --output /tmp/score.json",
+]
+on_anomaly = [                              # Run when file shrinks ($AMBER_FILE, $AMBER_SHRINK_RATIO)
+    # "notify-send 'Amber' 'Anomaly: $AMBER_FILE shrunk to $AMBER_SHRINK_RATIO'",
+]
+
+[gate]
+enabled = false
+score_key = "ALU"                           # Which metadata key to check
+# min_score = "3/5"                         # Minimum to pass (fraction or decimal)
+auto_rollback = false                       # Restore last passing version on failure
+
+# [remote]
+# method = "rsync"
+# destination = "user@server:/backup/amber"
+# auto_push = false
+# push_mode = "all"                         # "flagged", "watched", or "all"
+
+# [[mirror]]
+# path = "/media/user/MY_USB/amber-mirror"
+# sync_mode = "flagged"                     # flagged | watched | all
+# auto_sync = true
+# bundle_binary = true

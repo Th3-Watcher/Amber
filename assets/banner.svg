@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
+  <defs>
+    <linearGradient id="sbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <filter id="sg">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feFlood flood-color="#FFB300" flood-opacity="0.2" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="s"/>
+      <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="stg">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feFlood flood-color="#FFB300" flood-opacity="0.1" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="s"/>
+      <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="220" fill="url(#sbg)" rx="12"/>
+  <line x1="0" y1="219" x2="900" y2="219" stroke="#FFB300" stroke-width="1" opacity="0.3"/>
+
+  <!-- Stencil logo -->
+  <g transform="translate(90, 110) scale(0.36)" filter="url(#sg)">
+    <!-- Solid amber drop -->
+    <path d="M0,-250 C0,-250 -165,-75 -205,50 C-245,175 -180,235 -65,252 C-25,258 25,258 65,252 C180,235 245,175 205,50 C165,-75 0,-250 0,-250Z"
+      fill="#FFB300"/>
+    <!-- Bug cutout -->
+    <g transform="translate(0,35)" fill="#0d1117">
+      <ellipse cx="0" cy="24" rx="24" ry="34"/>
+      <ellipse cx="0" cy="-8" rx="19" ry="17"/>
+      <circle cx="0" cy="-30" r="14"/>
+      <path d="M-7,-42 Q-22,-66 -32,-76" fill="none" stroke="#0d1117" stroke-width="5" stroke-linecap="round"/>
+      <path d="M7,-42 Q22,-66 32,-76" fill="none" stroke="#0d1117" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="-32" cy="-76" r="5"/>
+      <circle cx="32" cy="-76" r="5"/>
+      <ellipse cx="-32" cy="2" rx="26" ry="40" opacity="0.6" transform="rotate(-12,-32,2)"/>
+      <ellipse cx="32" cy="2" rx="26" ry="40" opacity="0.6" transform="rotate(12,32,2)"/>
+      <g stroke="#0d1117" stroke-width="4" fill="none" stroke-linecap="round">
+        <path d="M-14,-14 L-40,-26"/><path d="M14,-14 L40,-26"/>
+        <path d="M-17,4 L-48,10"/><path d="M17,4 L48,10"/>
+        <path d="M-14,24 L-38,42"/><path d="M14,24 L38,42"/>
+      </g>
+    </g>
+    <!-- Eyes — amber dots -->
+    <circle cx="-7" cy="-1" r="4.5" fill="#FFB300"/>
+    <circle cx="7" cy="-1" r="4.5" fill="#FFB300"/>
+  </g>
+
+  <!-- Title -->
+  <text x="195" y="82" font-family="'SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="60" font-weight="700" fill="#FFB300" letter-spacing="4" filter="url(#stg)">
+    AMBER
+  </text>
+
+  <!-- Subtitle -->
+  <text x="197" y="118" font-family="'SF Mono','Fira Code','Cascadia Code',monospace"
+    font-size="14.5" fill="#8b949e" letter-spacing="2">
+    SELF-HEALING ML PIPELINES
+  </text>
+
+  <!-- Tagline -->
+  <text x="197" y="148" font-family="'SF Pro Text','Segoe UI',Helvetica,Arial,sans-serif"
+    font-size="13" fill="#6e7681" letter-spacing="0.3">
+    Immutable ledgers for model integrity, safety audits, and anomaly recovery
+  </text>
+
+  <!-- Right side — faded ledger entries -->
+  <g transform="translate(620, 48)" opacity="0.1" fill="#FFB300" font-family="'SF Mono',monospace" font-size="10">
+    <text x="0" y="0">[a1b2c3] PASS  ALU 5/5  590M</text>
+    <text x="5" y="16">[d4e5f6] PASS  ALU 5/5  590M</text>
+    <text x="-2" y="32">[f7a8b9] ANOMALY  shrink 0.43</text>
+    <text x="8" y="48">[c0d1e2] ROLLBACK  -> a1b2c3</text>
+    <text x="0" y="64">[3e4f5a] PASS  ALU 4/5  591M</text>
+    <text x="3" y="80">[6b7c8d] PASS  ALU 5/5  592M</text>
+    <text x="-4" y="96">[9e0f1a] GATE OK  score >= 3/5</text>
+    <text x="6" y="112">[2b3c4d] VERIFY  847/847 OK</text>
+    <text x="0" y="128">[5e6f7a] SYNC  rsync complete</text>
+    <text x="4" y="144">[8b9c0d] PASS  ALU 5/5  593M</text>
+  </g>
+</svg>
